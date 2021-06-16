@@ -1,6 +1,6 @@
 class project{
-    constructor(){
-        
+    constructor(title){
+        this.title = title
     }
 }
 

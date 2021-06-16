@@ -69,7 +69,7 @@ nav > * {
 }
 
 .project{
-    height: 300px;
+    min-height: 300px;
     border-radius: 8px;
     background-color: var(--main-beige);
     border: 2px solid #F2BB05;
@@ -88,3 +88,25 @@ nav > * {
     text-decoration-thickness: 2px;
 }
 
+.todo-item{
+    padding: 10px;
+}
+
+.add-project{
+    position: relative;
+    opacity: 50%;
+    transition: opacity .2s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-project:hover{
+    opacity: 100%;
+}
+
+#plus{
+    filter: invert(25%) sepia(13%) saturate(3513%) hue-rotate(166deg) brightness(97%) contrast(96%);
+    width: 50%;
+}
