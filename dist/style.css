@@ -1,6 +1,7 @@
 :root{
     --main-blue: #124E78;
     --main-beige: #F0F0C9;
+    --main-warning: #6e0e0a;
 }
 
 *{
@@ -66,9 +67,11 @@ nav > * {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: 0 auto;
     column-gap: 15px;
+    row-gap: 15px;
 }
 
 .project{
+    position: relative;
     min-height: 300px;
     border-radius: 8px;
     background-color: var(--main-beige);
@@ -78,6 +81,41 @@ nav > * {
     flex-direction: column;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.project:hover .project-menu{
+    opacity: 100%;
+
+}
+
+.project-menu{
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    justify-content: center;
+    color: white;
+    opacity: 0%;
+    transition: opacity .2s;
+    transform-origin: bottom;
+    margin: 7px;
+}
+
+.project-menu > *{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    margin: 5px;
+}
+
+.add-note{
+    background-color: var(--main-blue);
+}
+
+.remove-project{
+    background-color: rgb(153, 10, 10);
+}
+
 
 .project h2{
     padding: 15px;
@@ -110,3 +148,70 @@ nav > * {
     filter: invert(25%) sepia(13%) saturate(3513%) hue-rotate(166deg) brightness(97%) contrast(96%);
     width: 50%;
 }
+
+
+/* Code for Plus button inside projects and close button */
+
+.plus-button {
+	border: 2px solid var(--main-blue);
+	background-color: var(--main-beige);
+	font-size: 16px;
+	height: 2.5em;
+	width: 2.5em;
+	border-radius: 999px;
+    position: relative;
+    cursor: pointer;
+
+}
+.plus-button::after, .plus-button::before{
+    content: "";
+    display: block;
+    background-color: var(--main-blue);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.plus-button::after{
+    height: 0.2em;
+    width: 1em;
+}
+.plus-button::before{
+    height: 1em;
+	width: 0.2em;
+}
+
+
+/* close button */
+.x-button {
+    transform: rotateZ(45deg);
+	border: 2px solid var(--main-warning);
+	background-color: var(--main-beige);
+	font-size: 16px;
+	height: 2.5em;
+	width: 2.5em;
+	border-radius: 999px;
+    position: relative;
+    cursor: pointer;
+}
+
+.x-button::after, .x-button::before{
+    content: "";
+    display: block;
+    background-color: var(--main-warning);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.x-button::after{
+    height: 0.2em;
+    width: 1em;
+}
+.x-button::before{
+    height: 1em;
+	width: 0.2em;
+}
+
