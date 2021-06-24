@@ -69,7 +69,18 @@ function addNewProjectToPage(newobj){
 
 
 function addTaskToProject(){
-    console.log(this)
+    var project = this.parentElement.parentElement
+    var content = project.innerHTML
+    project.innerHTML = 
+    `<h2 class="project-title">Add Note</h2>
+    <form>
+        <label for='fdescription'>Task:</label>
+        <input type='text' id='fdescription' name="fdescription">
+        <label for='fdate'>Due:</label>
+        <input type="datetime-local" value="2018-06-12T19:30" id='fdate' name="fdate">
+    </form>
+    
+    `
 }
 
 

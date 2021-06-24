@@ -1,6 +1,5 @@
 class task{
-    constructor(title, description, dueDate, notes){
-        this.title = title
+    constructor(description, dueDate, notes){
         this.description = description
         this.dueDate = dueDate
         this.notes = notes
