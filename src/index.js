@@ -39,7 +39,7 @@ function bindButtons(){
 
 function bindProjectButtons(){
     let buttons = document.querySelectorAll('.plus-button')
-    buttons.forEach(button => button.addEventListener('click', addTaskToProject))
+    buttons.forEach(button => button.addEventListener('click', displayAddTask))
 }
 
 
@@ -68,19 +68,26 @@ function addNewProjectToPage(newobj){
 
 
 
-function addTaskToProject(){
+function displayAddTask(){
     var project = this.parentElement.parentElement
     var content = project.innerHTML
     project.innerHTML = 
     `<h2 class="project-title">Add Note</h2>
     <form>
         <label for='fdescription'>Task:</label>
-        <input type='text' id='fdescription' name="fdescription">
-        <label for='fdate'>Due:</label>
-        <input type="datetime-local" value="2018-06-12T19:30" id='fdate' name="fdate">
+        <input type='text' id='fdescription' name="fdescription"><br>
+        <label for='fdate'>Date:</label>
+        <input type="date" value="" id='fdate' name="fdate"><br>
+        <label for='ftime'>Time:</label>
+        <input type="time" value="" id='fdate' name="ftime">
+        
     </form>
-    
     `
+}
+
+function addTask(description, dueDate, notes, time){
+    
+
 }
 
 
